@@ -8,8 +8,9 @@ from mods.Lorenz63.sak12 import setup
 setup.t.T = 30
 
 # Specify a DA method configuration
-config = EnKF('Sqrt', N=10, infl=1.02, rot=True, liveplotting=True)
-
+#config = EnKF('Sqrt', N=10, infl=1.02, rot=True, liveplotting=True)
+#config = PartFilt(      N=100 ,reg=2.4  ,NER=0.3)
+config = OptPF(   N=50 ,NER=0.25,reg=1.4,Qs=0.4)
 # Simulate synthetic truth (xx) and noisy obs (yy)
 xx,yy = simulate(setup)
 
